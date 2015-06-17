@@ -1,0 +1,16 @@
+	h1 {
+		margin: 10px 0 15px 0;
+		font: bold 16px Arial, Helvetica, sans-serif;
+		color: #0000FF;
+	}
+	form {
+		margin: 0 0 15px 0;
+	}
+	th {
+		padding: 5px;
+	}
+	td {
+		padding: 5px;
+		font: 11px Arial, Helvetica, sans-serif;
+		color: #000000;
+	}

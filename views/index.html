@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>StubHub API - Node.js Event Query Sample</title>
+<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css">
+<script type="text/javascript" src="/handlebars-v3.0.3.js"></script>
+<script type="text/javascript" src="/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/script.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+<div class="row" id="customrow">
+<h1 class="text-center">StubHub API - Node.js Event Query Sample</h1>
+
+<form method="post" action="/" class="text-center" id="testform" autocomplete="off">
+    <input class="form-control input-lg" type="text" id="data" name="q" placeholder="Search for Tickets"/>
+    <input class="btn btn-primary btn-lg" id="btn-custom" type="submit" value="Find Tickets" autocomplete="off"/>
+</form>
+</div>
+<div class="row special">
+</div>
+</div>
+<script id="entry-template" type="text/x-handlebars-template">
+<table class="table" id="datadisplay">
+	<thead>
+    	<th>EVENT DESCRIPTION</th>
+        <th>EVENT DATE</th>
+        <th>VENUE NAME</th>
+        <th>CITY/STATE</th>
+        <th>VIEW</th>
+    </thead>
+    {{#each events}}
+   		{{> eventPartial}}
+   	{{/each}}
+</table>
+</script>
+<script id="events-template" type="text/x-handlebars-template">
+    <tr>
+    	<td>{{description}}</td>
+    	<td>{{dateLocal}}</td>
+    	<td>{{venue.name}}</td>
+    	<td>{{venue.city}}, {{venue.state}}</td>
+    	<td><a href={{eventInfoUrl}}>view</a></td>
+    </tr>
+</script>
+</body>
+</html>
