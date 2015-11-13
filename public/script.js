@@ -30,6 +30,7 @@ $(document).ready(function(){
 		             contentType: 'application/x-www-form-urlencoded',
 		             success: function (data, status, jqXHR) {
 		             	var dataObject = data;
+		             	console.log(dataObject);
 
 		                var source   = $("#entry-template").html();
 		                console.log(source);
